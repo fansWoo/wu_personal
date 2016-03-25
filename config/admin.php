@@ -7,14 +7,15 @@ $config['group_purview_Arr'] = array(
 	'2' => array(//總管理員，看得到除了系統管理員以外的所有管理員
 		array('base', 'global', 'global', 'common'),
 		array('base', 'global', 'global', 'email'),
-		array('base', 'global', 'website_content', 'edit'),
-		array('base', 'global', 'website_content', 'tablelist'),
-		array('base', 'global', 'global_setting', 'edit'),
-		array('base', 'global', 'global_setting', 'tablelist'),
-		array('base', 'global', 'website_meta', 'seo'),
+		array('base', 'global', 'global', 'global_setting'),
+// 		array('base', 'global', 'website_content', 'edit'),
+// 		array('base', 'global', 'website_content', 'tablelist'),
+// 		array('base', 'global', 'global_setting', 'edit'),
+// 		array('base', 'global', 'global_setting', 'tablelist'),
+// 		array('base', 'global', 'website_meta', 'seo'),
 		array('base', 'global', 'website_meta', 'plugin'),
-		array('base', 'advertising', 'advertising', 'edit'),
-		array('base', 'advertising', 'advertising', 'tablelist'),
+// 		array('base', 'advertising', 'advertising', 'edit'),
+// 		array('base', 'advertising', 'advertising', 'tablelist'),
 		// array('base', 'advertising', 'classmeta', 'edit'),
 		// array('base', 'advertising', 'classmeta', 'tablelist'),
 		array('base', 'pic', 'pic', 'edit'),
@@ -22,18 +23,18 @@ $config['group_purview_Arr'] = array(
 		array('base', 'pic', 'album', 'edit'),
 		array('base', 'pic', 'album', 'tablelist'),
 		array('base', 'pic', 'set', 'set'),
-		array('base', 'file', 'file', 'edit'),
-		array('base', 'file', 'file', 'tablelist'),
-		array('base', 'file', 'classmeta', 'edit'),
-		array('base', 'file', 'classmeta', 'tablelist'),
-		array('base', 'file', 'set', 'set'),
+// 		array('base', 'file', 'file', 'edit'),
+// 		array('base', 'file', 'file', 'tablelist'),
+// 		array('base', 'file', 'classmeta', 'edit'),
+// 		array('base', 'file', 'classmeta', 'tablelist'),
+// 		array('base', 'file', 'set', 'set'),
 		array('base', 'note', 'note', 'edit'),
 		array('base', 'note', 'note', 'tablelist'),
 		array('base', 'note', 'classmeta', 'edit'),
 		array('base', 'note', 'classmeta', 'tablelist'),
 		array('base', 'note', 'set', 'set'),
-		array('base', 'comment', 'comment', 'edit'),
-		array('base', 'comment', 'comment', 'tablelist'),
+// 		array('base', 'comment', 'comment', 'edit'),
+// 		array('base', 'comment', 'comment', 'tablelist'),
 		// array('base', 'user', 'user', 'edit'),
 		// array('base', 'user', 'user', 'tablelist'),
 		array('base', 'user', 'user_shop', 'edit'),
@@ -48,38 +49,42 @@ $config['group_purview_Arr'] = array(
 		// array('base', 'pager', 'classmeta2', 'edit'),
 		// array('base', 'pager', 'classmeta2', 'tablelist'),
 		array('base', 'pager', 'set', 'set'),
-		// array('base', 'showpiece', 'showpiece', 'edit'),
-		// array('base', 'showpiece', 'showpiece', 'tablelist'),
-		// array('base', 'showpiece', 'classmeta', 'edit'),
-		// array('base', 'showpiece', 'classmeta', 'tablelist'),
+		//array('base', 'showpiece', 'showpiece', 'edit'),
+		//array('base', 'showpiece', 'showpiece', 'tablelist'),
+		//array('base', 'showpiece', 'classmeta', 'edit'),
+		//array('base', 'showpiece', 'classmeta', 'tablelist'),
 		// array('base', 'showpiece', 'classmeta2', 'edit'),
 		// array('base', 'showpiece', 'classmeta2', 'tablelist'),
-		array('base', 'showpiece', 'set', 'set'),
+		//array('base', 'showpiece', 'set', 'set'),
+		//array('base', 'faq', 'faq', 'edit'),
+		//array('base', 'faq', 'faq', 'tablelist'),
+		//array('base', 'faq', 'classmeta', 'edit'),
+		//array('base', 'faq', 'classmeta', 'tablelist'),
 		array('base', 'contact', 'contact', 'edit'),
 		array('base', 'contact', 'contact', 'tablelist'),
 		array('base', 'contact', 'set', 'set'),
 
-		array('shop', 'store', 'global', 'hot'),
-		array('shop', 'store', 'global', 'tradein'),
-		array('shop', 'store', 'global', 'coupon'),
-		array('shop', 'store', 'global', 'transfer'),
-		array('shop', 'transport', 'transport', 'edit'),
-		array('shop', 'transport', 'transport', 'tablelist'),
-		array('shop', 'product', 'product', 'edit'),
-		array('shop', 'product', 'product', 'tablelist'),
-		array('shop', 'product', 'classmeta', 'edit'),
-		array('shop', 'product', 'classmeta', 'tablelist'),
-		array('shop', 'product', 'classmeta2', 'edit'),
-		array('shop', 'product', 'classmeta2', 'tablelist'),
-		array('shop', 'product', 'set', 'set'),
-		array('shop', 'order_shop', 'order_shop', 'edit'),
-		array('shop', 'order_shop', 'order_shop', 'tablelist'),
-		array('shop', 'order_shop', 'set', 'set'),
+// 		array('shop', 'store', 'global', 'hot'),
+// 		array('shop', 'store', 'global', 'tradein'),
+// 		array('shop', 'store', 'global', 'coupon'),
+// 		array('shop', 'store', 'global', 'transfer'),
+// 		array('shop', 'transport', 'transport', 'edit'),
+// 		array('shop', 'transport', 'transport', 'tablelist'),
+// 		array('shop', 'product', 'product', 'edit'),
+// 		array('shop', 'product', 'product', 'tablelist'),
+// 		array('shop', 'product', 'classmeta', 'edit'),
+// 		array('shop', 'product', 'classmeta', 'tablelist'),
+// 		array('shop', 'product', 'classmeta2', 'edit'),
+// 		array('shop', 'product', 'classmeta2', 'tablelist'),
+// 		array('shop', 'product', 'set', 'set'),
+// 		array('shop', 'order_shop', 'order_shop', 'edit'),
+// 		array('shop', 'order_shop', 'order_shop', 'tablelist'),
+// 		array('shop', 'order_shop', 'set', 'set'),
         
 		// array('user', 'global', 'global', 'user'),
 		array('user', 'global', 'global_shop', 'user'),
-		array('user', 'order_shop', 'order_shop', 'edit'),
-		array('user', 'order_shop', 'order_shop', 'tablelist')
+// 		array('user', 'order_shop', 'order_shop', 'edit'),
+// 		array('user', 'order_shop', 'order_shop', 'tablelist')
 	),
 	'3' => array(//一般管理員，只看得到自己
 		array('base', 'user', 'user_shop', 'edit'),
@@ -87,8 +92,8 @@ $config['group_purview_Arr'] = array(
 		// array('base', 'user', 'classmeta', 'edit'),
 		// array('base', 'user', 'classmeta', 'tablelist'),
         
-		array('user', 'global', 'global', 'user'),
-		// array('user', 'global', 'global_shop', 'user'),
+		// array('user', 'global', 'global', 'user'),
+		array('user', 'global', 'global_shop', 'user'),
 		array('user', 'order_shop', 'order_shop', 'edit'),
 		array('user', 'order_shop', 'order_shop', 'tablelist')
 	),
@@ -129,7 +134,8 @@ $config['admin_sidebox'] = array(
 							'title' => '全域',
 							'child4' => array(
 								'common' => array('title' => '網站總覽'),
-                                'email' => array('title' => '郵件設置')
+                                'email' => array('title' => '郵件設置'),
+                                'global_setting' => array('title' => '全域設置')
 							)
 						),
 						'website_content' => [
@@ -363,6 +369,31 @@ $config['admin_sidebox'] = array(
 						)
 				 	)
 				 ),
+				'faq' => array(
+					'title' => '常見問題',
+					'child3' => array(
+						'faq' => array(
+							'title' => '常見問題',
+							'child4' => array(
+								'edit' => array('title' => '編輯'),
+								'tablelist' => array('title' => '列表')
+							)
+						),
+						'classmeta' => array(
+							'title' => '分類標籤',
+							'child4' => array(
+								'edit' => array('title' => '編輯'),
+								'tablelist' => array('title' => '列表')
+							)
+						),
+						'set' => array(
+							'title' => '常見問題系統',
+							'child4' => array(
+								'set' => array('title' => '設置')
+							)
+						)
+					)
+				),
 				'contact' => array(
 				 	'title' => '聯繫單',
 				 	'child3' => array(

@@ -171,7 +171,7 @@ $(function(){
                     var upload_status = $("[fanswoo-pic_upload_ajax]:eq(" + key + ")").attr('fanswoo-upload_status');
                     $("[fanswoo-pic_upload_form]").ajaxSubmit({
                         type:'post',
-                        url: "api/pic/upload_pic/?upload_status=" + upload_status,    
+                        url: $("base").attr("href") + "api/pic/upload_pic/?upload_status=" + upload_status,    
                         beforeSubmit: function(){
                             $("[fanswoo-pic_upload_ajax]:eq(" + key + ") [fanswoo-pic_upload_ajax_message]").text("圖片上傳中...");
                         },
@@ -221,7 +221,7 @@ $(function(){
     $(document).on('click', '[fanswoo-picid] [fanswoo-pic_delete]', function(){
         var picid = $(this).parents('[fanswoo-picid]').attr('fanswoo-picid');
         $.ajax({
-            url: 'api/pic/delete_pic/picid/' + picid,
+            url: $("base").attr("href") + 'api/pic/delete_pic/picid/' + picid,
             error: function(xhr){},
             success: function(response){
                 $('[fanswoo-picid=' + picid + ']').remove();
@@ -266,7 +266,7 @@ $(function(){
                     $("[fanswoo-file_upload_ajax]:eq(" + key + ") [fanswoo-file_upload_ajax_input]").appendTo("[fanswoo-file_upload_form]");
                     $("[fanswoo-file_upload_form]").ajaxSubmit({
                         type:'post',
-                        url: "api/file/upload_file",    
+                        url: $("base").attr("href") + "api/file/upload_file",    
                         beforeSubmit: function(){
                             $("[fanswoo-file_upload_ajax]:eq(" + key + ") [fanswoo-file_upload_ajax_message]").text("檔案上傳中...");
                         },
@@ -314,7 +314,7 @@ $(function(){
     $(document).on('click', '[fanswoo-fileid] [fanswoo-file_delete]', function(){
         var fileid = $(this).parents('[fanswoo-fileid]').attr('fanswoo-fileid');
         $.ajax({
-            url: 'api/file/delete_file/fileid/' + fileid,
+            url: $("base").attr("href") + 'api/file/delete_file/fileid/' + fileid,
             error: function(xhr){},
             success: function(response){
                 $('[fanswoo-fileid=' + fileid + ']').remove();
@@ -329,11 +329,10 @@ $(function(){
 
     //admin開啟AJAX視窗
     $(document).on('click', '[fanswoo-ajax_window_href]', function(){
-        var url = $(this).attr('[fanswoo-ajax_window_href]');
         if( is_mobile)
         {
             $.ajax({
-                url: url,
+                url: $(this).attr('[fanswoo-ajax_window_href]'),
                 error: function(xhr){},
                 success: function(response){
                     var window_height = $(window).height();

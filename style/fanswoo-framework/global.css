@@ -1,5 +1,5 @@
-*{ font-family: 'Noto Sans CJK TC', LiHei Pro, "儷黑體", sans-serif , Microsoft JhengHei ; }
-html.agent-ie * { font-family: LiHei Pro, "儷黑體", sans-serif , Microsoft JhengHei ; }
+*{ font-family: 'Noto Sans CJK TC', LiHei Pro, "儷黑體", sans-serif; }
+html.agent-ie * { font-family: LiHei Pro, "儷黑體", sans-serif; }
 body,
 h1,
 h2,

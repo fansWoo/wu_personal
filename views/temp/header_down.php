@@ -2,5 +2,5 @@
 	<link rel="stylesheet" type="text/css" href="<?=base_url(APPURL.'style/'.$value)?>"></link>
 	<?endforeach?>
 </head>
-<body id="body">
+<body>
 	<?=$temp['message_window']?>

@@ -284,6 +284,51 @@ class Global_Controller extends MY_Controller {
         }
     }
 
+    public function global_setting()
+    {
+        $data = $this->data;//取得公用數據
+        $data = array_merge($data, $this->AdminModel->get_data(array(
+            'child4_name_Str' => 'global_setting'//管理分類名稱
+        )));
+
+        $this->config->load('admin/global/global');
+        $data['setting_Arr'] = $this->config->item('setting_Arr');
+
+        foreach($data['setting_Arr'] as $key => $value_Arr)
+        {
+            if( !empty($value_Arr['child']) )
+            {
+                foreach($value_Arr['child'] as $key2 => $value2_Arr)
+                {
+                    $name_Arr[] = $value2_Arr['name'];
+                }
+            }
+        }
+
+        $SettingList = new SettingList();
+        $SettingList->construct_db([
+            'db_where_or_Arr' => [
+                'keyword' => $name_Arr
+            ]
+        ]);
+
+        $data['global'] = array_merge($data['global'], $SettingList->get_array());
+
+        //global
+        $data['global']['style'][] = 'admin/global.css';
+        $data['global']['js'][] = 'admin.js';
+
+        //temp
+        $data['temp']['header_up'] = $this->load->view('temp/header_up', $data, TRUE);
+        $data['temp']['header_down'] = $this->load->view('temp/header_down', $data, TRUE);
+        $data['temp']['admin_header_bar'] = $this->load->view('admin/temp/admin_header_bar', $data, TRUE);
+        $data['temp']['admin_footer_bar'] = $this->load->view('admin/temp/admin_footer_bar', $data, TRUE);
+        $data['temp']['body_end'] = $this->load->view('temp/body_end', $data, TRUE);
+
+        //輸出模板
+        $this->load->view('admin/'.$data['admin_child_url_Str'], $data);
+    }
+
 }
 
 ?>

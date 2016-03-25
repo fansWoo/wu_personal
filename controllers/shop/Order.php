@@ -2,6 +2,7 @@
 
 class Order_Controller extends MY_Controller
 {
+
     function __construct()
     {
         parent::__construct();
@@ -16,22 +17,16 @@ class Order_Controller extends MY_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
     }
-    
-    public function index()
-    {
+	
+	public function index()
+	{
         $url_Str = base_url('order/cartlist');
         header("Location: $url_Str");
-    }
+	}
 
     public function cartlist()
     {
         $data = $this->data;
-
-        if($data['User']->uid_Num == '')
-        {
-            $url = base_url('user/login/?url=order');
-            header('Location: '.$url);
-        }
 
         //讀取建構中的訂單
         $data['OrderShop'] = new OrderShop([
@@ -41,22 +36,21 @@ class Order_Controller extends MY_Controller
             )
         ]);
 
-        $data['TransportList'] = new ObjList();
-        $data['TransportList']->construct_db(array(
-            'model_name_Str' => 'Transport',
+        $data['transportList'] = new ObjList([
             'db_where_deletenull_Bln' => TRUE,
+            'model_name_Str' => 'Transport',
             'limitstart_Num' => 0,
             'limitcount_Num' => 100
-        ));
+        ]);
 
         //如果沒有建構中的訂單則建立一個新的訂單
         if(empty($data['OrderShop']->orderid_Num))
         {
             $data['OrderShop'] = new OrderShop([
                 'uid_Num' => $data['User']->uid_Num,
-                'transport_mode_Str' => $data['TransportList']->obj_Arr[0]->name_Str,
-                'transport_base_price_Num' => $data['TransportList']->obj_Arr[0]->base_price_Num,
-                'transport_additional_price_Num' => $data['TransportList']->obj_Arr[0]->additional_price_Num,
+                'transport_mode_Str' => $data['transportList']->obj_Arr[0]->name_Str,
+                'transport_base_price_Num' => $data['transportList']->obj_Arr[0]->base_price_Num,
+                'transport_additional_price_Num' => $data['transportList']->obj_Arr[0]->additional_price_Num,
                 'pay_paytype_Str' => 'atm',
                 'order_status_Num' => -1//建構中的訂單
             ]);
@@ -83,8 +77,6 @@ class Order_Controller extends MY_Controller
         
         //global
         $data['global']['style'][] = 'temp/global.css';
-        $data['global']['style'][] = 'temp/header_bar.css';
-        $data['global']['style'][] = 'temp/footer_bar.css';
         $data['global']['style'][] = 'shop/order.css';
         
         //temp
@@ -160,35 +152,6 @@ class Order_Controller extends MY_Controller
         }
     }
 
-    public function cartlist_amount_change()
-    {
-        $data = $this->data;
-
-        $cartid_Num = $this->input->get('cartid');
-        $amount_Num = $this->input->get('amount');
-        $orderid_Num = $this->input->get('orderid');
-
-        $CartShop = new CartShop();
-        $CartShop->construct_db(array(
-            'db_where_Arr' => array(
-                'cartid_Num' => $cartid_Num,
-            )
-        ));
-        $CartShop->amount_Num = $amount_Num;
-        $CartShop->update();
-
-        $OrderShop = new OrderShop();
-        $OrderShop->construct_db(array(
-            'db_where_Arr' => array(
-                'orderid_Num' => $orderid_Num
-            )
-        ));
-
-        $OrderShop->count_price_total();
-        $OrderShop->pay_price_total_Num == $OrderShop->pay_price_total_Num;
-        $OrderShop->update();
-    }
-
     public function checkout()
     {
         $data = $this->data;
@@ -221,8 +184,6 @@ class Order_Controller extends MY_Controller
         
         //global
         $data['global']['style'][] = 'temp/global.css';
-        $data['global']['style'][] = 'temp/header_bar.css';
-        $data['global']['style'][] = 'temp/footer_bar.css';
         $data['global']['style'][] = 'shop/order.css';
         
         //temp
@@ -610,7 +571,7 @@ class Order_Controller extends MY_Controller
         $url_Str = base_url('order/cartlist');
         header("Location: $url_Str");
     }
-    
+	
 }
 
 ?>

@@ -3,7 +3,7 @@
 <head>
 	<title><?=$global['website_title_name']?><?if($global['website_title_introduction']):?> - <?=$global['website_title_introduction']?><?endif?></title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 , user-scalable=no "> <!-- -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <?foreach( (array) $global['website_metatag_Arr'] as $key => $value_Str ):?>
     <meta name="keywords" content="<?=$value_Str?>" />
     <?endforeach?>
@@ -12,15 +12,13 @@
 	<meta name="keywords" content="<?=$value?>">
 	<?endforeach?>
 	<?endif?>
-	<base href="<?=prep_url($_SERVER['HTTP_HOST'].base_url())?>" />
+	<base href="//<?=$_SERVER['HTTP_HOST'].base_url()?>" />
 	<script src="<?=base_url(APPURL.'js/jquery-1.11.1.min.js')?>"></script>
 	<script src="<?=base_url(APPURL.'js/jquery-ui-1.11.4.custom/jquery-ui.js')?>"></script>
-	<script src="<?=base_url(APPURL.'js/jquery.mobile.custom.js')?>"></script>
 	<link rel="stylesheet" type="text/css" href="<?=base_url(APPURL.'js/jquery-ui-1.11.4.custom/jquery-ui.css')?>"></link>
 	<script src="<?=base_url(APPURL.'js/fanswoo-1.3.1.js')?>"></script>
-	<script src="<?=base_url(APPURL.'js/global.js')?>"></script>
 	<?foreach( (array) $global['js'] as $value):?>
-	<!--<script src="<?=base_url(APPURL.'js/'.$value)?>"></script>-->
+	<script src="<?=base_url(APPURL.'js/'.$value)?>"></script>
 	<?endforeach?>
 	<?if(!empty($global['website_script_plugin_ga'])):?><?=$global['website_script_plugin_ga']?><?endif?>
 	<?if(!empty($global['website_script_plugin_fb'])):?><?=$global['website_script_plugin_fb']?><?endif?>

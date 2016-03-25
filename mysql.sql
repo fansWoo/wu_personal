@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: localhost
--- 建立日期: 2016-01-09: 00:27:30
--- 伺服器版本: 5.6.24
--- PHP 版本: 5.6.8
+-- 建立日期: 2016-03-21: 10:27:26
+-- 伺服器版本: 5.6.21
+-- PHP 版本: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- 資料庫: `fanswoo_com_fanswoo-framework`
+-- 資料庫: `fanswoo-framework`
 --
 
 -- --------------------------------------------------------
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `fs_browsing_log` (
   `post_message` char(200) DEFAULT NULL,
   `header_message` char(200) DEFAULT NULL,
   `locale` char(5) NOT NULL,
-  `updatetime` datetime NOT NULL,
+  `updatetime` datetime DEFAULT NULL,
   `status` int(1) NOT NULL,
   UNIQUE KEY `browsing_logid` (`browsing_logid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -82,7 +82,8 @@ INSERT INTO `fs_browsing_log` (`browsing_logid`, `uid`, `real_ip`, `proxy_ip`, `
 (1, 528501, '::1', '::1', '44-8A-5B-6F-B7-4A', 'admin/base/contact/contact/tablelist', '[]', '[]', 'localhost\r\nkeep-alive\r\nmax-age=0\r\ntext/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n1\r\nMozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0', 'zh-TW', '2016-01-09 07:25:50', 1),
 (2, 528501, '::1', '::1', '44-8A-5B-6F-B7-4A', 'admin/base/contact/contact/edit', '{"contactid":"18"}', '[]', 'localhost\r\nkeep-alive\r\ntext/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n1\r\nMozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 S', 'zh-TW', '2016-01-09 07:26:00', 1),
 (3, 528501, '::1', '::1', '44-8A-5B-6F-B7-4A', 'admin/base/contact/contact/edit_post', '[]', '{"status_process_Num":"2","contactid_Num":"18"}', 'localhost\r\nkeep-alive\r\nmax-age=0\r\ntext/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\nhttp://localhost\r\n1\r\nMozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like', 'zh-TW', '2016-01-09 07:26:07', 1),
-(4, 528501, '::1', '::1', '44-8A-5B-6F-B7-4A', 'admin/base/contact/contact/tablelist', '[]', '[]', 'localhost\r\nkeep-alive\r\nmax-age=0\r\ntext/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n1\r\nMozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0', 'zh-TW', '2016-01-09 07:26:07', 1);
+(4, 528501, '::1', '::1', '44-8A-5B-6F-B7-4A', 'admin/base/contact/contact/tablelist', '[]', '[]', 'localhost\r\nkeep-alive\r\nmax-age=0\r\ntext/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n1\r\nMozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0', 'zh-TW', '2016-01-09 07:26:07', 1),
+(5, NULL, '::1', '::1', '20-47-47-77-20-B9', '', '[]', '[]', 'localhost\r\nkeep-alive\r\nmax-age=0\r\ntext/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n1\r\nMozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0', 'zh-TW', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -290,6 +291,39 @@ INSERT INTO `fs_contact` (`contactid`, `username`, `email`, `phone`, `company`, 
 (16, '張琬君', 'mimi@fanswoo.com', '0912345678', '', '測試問題聯繫編輯處理狀態', 1, '問題詢問', '2015-08-14 06:09:53', 1),
 (17, '張琬君', 'mimi@fanswoo.com', '02-2256-5698', '', '測試問題聯繫編輯處理狀態', 2, '其它聯繫', '2015-08-14 06:11:22', 1),
 (18, 'Mimi Chang', 'mimi@fanswoo.com', '02-2222-2222', '', '測試～～～', 2, '品項試用', '2015-08-14 06:17:24', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `fs_faq`
+--
+
+CREATE TABLE IF NOT EXISTS `fs_faq` (
+  `faqid` mediumint(8) unsigned NOT NULL,
+  `uid` mediumint(8) NOT NULL DEFAULT '0',
+  `title` char(100) NOT NULL DEFAULT '',
+  `username` char(30) NOT NULL DEFAULT '',
+  `picids` char(100) NOT NULL DEFAULT '',
+  `classids` char(100) NOT NULL DEFAULT '',
+  `modelname` char(100) NOT NULL DEFAULT '',
+  `prioritynum` mediumint(8) NOT NULL DEFAULT '0',
+  `updatetime` datetime NOT NULL,
+  `locale` char(5) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '0',
+  UNIQUE KEY `qaid` (`faqid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `fs_faq_field`
+--
+
+CREATE TABLE IF NOT EXISTS `fs_faq_field` (
+  `faqid` mediumint(8) NOT NULL,
+  `content` text NOT NULL,
+  UNIQUE KEY `qaid` (`faqid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1032,7 +1066,8 @@ INSERT INTO `fs_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activ
 ('f268d64082c902bca7353307ae1d45f0', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36', 1452078723, 'a:2:{s:9:"user_data";s:0:"";s:3:"uid";s:6:"528501";}'),
 ('70d29929fe56658fdd8d50ae0b66be7f', '::1', 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like Gecko) Version/8.0 Mobile/12A4345', 1452078756, 'a:2:{s:9:"user_data";s:0:"";s:3:"uid";s:6:"528501";}'),
 ('13ec41c773e900e9a1f0b2ee5fbdb1e7', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36', 1452078815, 'a:2:{s:9:"user_data";s:0:"";s:3:"uid";s:6:"528501";}'),
-('5c6b38f8eb2133a4e107d756f6baa115', '::1', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36', 1452286853, 'a:2:{s:9:"user_data";s:0:"";s:3:"uid";s:6:"528501";}');
+('5c6b38f8eb2133a4e107d756f6baa115', '::1', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36', 1452286853, 'a:2:{s:9:"user_data";s:0:"";s:3:"uid";s:6:"528501";}'),
+('8e186f5014c943e8baa5d07c71c72d84', '::1', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36', 1458480456, '');
 
 -- --------------------------------------------------------
 
