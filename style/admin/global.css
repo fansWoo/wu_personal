@@ -1,0 +1,651 @@
+
+/* Layout */
+
+.header_bar_mobile { display: none; }
+.header_bar_mobile_content { display: none; }
+.wrap_shadow { display: none; }
+
+a { color: #027de5; }
+.gray { color: #999; }
+.green { color: green; }
+.red { color: red; }
+
+textarea {
+    line-height: 18px;
+    font-size: 12px;
+    padding: 5px;
+}
+input[type=text],
+input[type=number],
+input[type=password] {
+    height: 20px;
+    line-height: 18px;
+    font-size: 12px;
+    padding: 5px;
+}
+input ,select, textarea { -webkit-animation: fadeInLeft 0.8s; }
+[data-hrefto] {
+    cursor: pointer;
+}
+.ahref {
+    color: #027de5;
+    cursor: pointer;
+}
+body {
+    font-size: 12px;
+    /* Resets 1em to 10px */
+    height: 100%;
+    background: #fff;
+    line-height: 1.4;
+    overflow-y: scroll;
+}
+.body {
+    height: 100%;
+    overflow-x: hidden;
+}
+.wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #EEE;
+}
+.header {
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+    line-height: 50px;
+}
+.header .logo {
+    display: block;
+    width: 120px;
+    height: 50px;
+    margin-left: 25px;
+    background: url(../../img/fanswoo-logo.svg) no-repeat center center;
+    float: left;
+    font-size: 15px;
+    color: #FFF;
+}
+html.agent-ie8 .header .logo {
+    background: url(../../img/fanswoo-logo.png) no-repeat center center;
+}
+.header .logStatus {
+    float: right;
+    color: #FFF;
+    margin-right: 30px;
+}
+.header .logStatus .username {
+    margin: 0 10px 0 0;
+}
+.header .logStatus a {
+    color: #FFF;
+}
+.sidebar {
+    display: block;
+    float: left;
+    background: rgba(100, 100, 100, 1);
+    width: 180px;
+    height: 100%;
+    font-size: 15px;
+    padding: 70px 0 300px 0;
+    padding-bottom: 10000px;
+    margin-bottom: -10000px;
+}
+.phone_sidebar {
+    display: none;
+}
+.sidebar .sidebox {
+    margin-bottom: 10px;
+}
+.sidebar .sidebox.hidden{
+    display: none;
+}
+.sidebar .sidebox h2 {
+    font-size: 15px;
+    height: 50px;
+    line-height: 50px;
+    color: #AAA;
+    background: rgba(50, 50, 50, 1);
+    padding-left: 30px;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+.sidebar .sidebox h2:hover {
+    color: #FFF;
+}
+.sidebar .sidebox {
+    height: 50px;
+    max-height: 50px;
+    min-height: 50px;
+    overflow: hidden;
+    -webkit-transition: min-height 0.5s, max-height 1.2s;
+}
+.sidebar .sidebox.hover {
+    height: auto;
+    max-height: 1000px;
+    min-height: 200px;
+}
+.sidebar .sidebox .acHref .acHrefBig {
+    font-size: 15px;
+    height: 40px;
+    line-height: 42px;
+    padding-left: 20px;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 30px;
+    -webkit-transition: all 0.5s;
+    background: rgba(100, 100, 100, 1);
+    color: #AAA;
+}
+.sidebar .sidebox .acHref:hover .acHrefBig {
+    color: #FFF;
+}
+.sidebar .sidebox .acHref.hover:hover .acHrefBig,
+.sidebar .sidebox .acHref.hover .acHrefBig {
+    background: #027de5;
+    color: #FFF;
+}
+.sidebar .sidebox .acHref .acHrefSmallBar {
+    padding: 0 0 0 30px;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+}
+.sidebar .sidebox .acHref.hover .acHrefSmallBar {
+    padding: 10px 0 10px 30px;
+    height: auto;
+    background: rgba(80, 80, 80, 1);
+}
+.sidebar .sidebox .acHref .acHrefSmallBar .acHrefSmall,
+.sidebar .sidebox .acHref.hover .acHrefSmallBar .acHrefSmall {
+    display: block;
+    position: relative;
+    color: #AAA;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 13px;
+    -webkit-transition: color 0.5s;
+}
+.sidebar .sidebox .acHref.hover .acHrefSmallBar .acHrefSmall:hover,
+.sidebar .sidebox .acHref.hover .acHrefSmallBar .acHrefSmall.hover {
+    color: #FFF;
+}
+.sidebar .sidebox .acHref.hover .acHrefSmallBar .acHrefSmall.hover::after {
+    right: 0;
+    border: 8px solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: #EEE;
+    top: 50%;
+    margin-top: -8px;
+}
+.content {
+    float: left;
+    width: calc(100% - 260px);
+    min-height: 600px;
+    padding: 80px 20px;
+}
+.content h2 {
+    margin-bottom: 20px;
+}
+.content .contentBox.allWidth {
+    width: 100%;
+}
+.content .contentBox {
+    padding: 20px;
+    background: #FFF;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.content .contentBox h3 {
+    display: block;
+    font-size: 18px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+.content .contentBox h4 {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+.content .contentBox .spanLine {
+    padding: 5px 10px;
+    border-bottom: 1px solid #EEE;
+    min-height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    -webkit-transition: background 0.5s;
+}
+.content .contentBox .spanLine.pic {
+    padding: 5px 2px;
+}
+.content .contentBox .spanLine.tableTitle {
+    background: #EEE;
+    border-radius: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    min-height: 20px;
+    line-height: 20px;
+}
+.content .contentBox .spanLine:hover {
+    background: #EEE;
+}
+.content .contentBox .spanLine.pic:hover {
+    background: #FFF;
+}
+.content .contentBox .spanLine.noneBg {
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+}
+.content .contentBox .spanLine.noneBg:hover {
+    background: none;
+}
+.content .contentBox .spanLine .spanStage {
+    overflow: hidden;
+}
+.content .contentBox .spanLine .spanLineLeft {
+    float: left;
+    padding: 0 6px;
+    min-height: 20px;
+    width: 150px;
+    overflow: hidden;
+}
+.content .contentBox .spanLine .spanLineLeft.tablelistMenu a,
+.content .contentBox .spanLine .spanLineLeft.tablelistMenu .ahref
+{ margin-right: 10px; }
+.content .contentBox .spanLine .spanLineLeft.aligncenter {
+    text-align: center;
+}
+.content .contentBox .spanLine .spanLineLeft.width200,
+.content .contentBox .spanLine .spanLineRight.width200 {
+    width: 200px;
+}
+.content .contentBox .spanLine .spanLineLeft.width300,
+.content .contentBox .spanLine .spanLineRight.width300 {
+    width: 300px;
+}
+.content .contentBox .spanLine .spanLineLeft.width400,
+.content .contentBox .spanLine .spanLineRight.width400 {
+    width: 400px;
+}
+.content .contentBox .spanLine .spanLineLeft.width500,
+.content .contentBox .spanLine .spanLineRight.width500 {
+    width: 500px;
+}
+.content .contentBox .spanLine .spanLineLeft.width600,
+.content .contentBox .spanLine .spanLineRight.width600 {
+    width: 600px;
+}
+.content .contentBox .spanLine .spanLineLeft.width100,
+.content .contentBox .spanLine .spanLineRight.width100 {
+    width: 100px;
+}
+.content .contentBox .spanLine .spanLineLeft.checkbox {
+    width: 20px;
+}
+.content .contentBox .spanLine .spanLineLeft.text {
+    padding: 0 6px;
+    width: 145px;
+}
+.content .contentBox .spanLine .spanLineLeft.text.width200,
+.content .contentBox .spanLine .spanLineRight.text.width200 {
+    width: 195px;
+}
+.content .contentBox .spanLine .spanLineLeft.text.width300,
+.content .contentBox .spanLine .spanLineRight.text.width300 {
+    width: 295px;
+}
+.content .contentBox .spanLine .spanLineLeft.text.width400,
+.content .contentBox .spanLine .spanLineRight.text.width400 {
+    width: 395px;
+}
+.content .contentBox .spanLine .spanLineLeft.text.width500,
+.content .contentBox .spanLine .spanLineRight.text.width500 {
+    width: 495px;
+}
+.content .contentBox .spanLine .spanLineLeft.text.width600,
+.content .contentBox .spanLine .spanLineRight.text.width600 {
+    width: 595px;
+}
+.content .contentBox .spanLine .spanLineLeft.text.width100,
+.content .contentBox .spanLine .spanLineRight.text.width100 {
+    width: 95px;
+}
+.content .contentBox .spanLine .spanLineRight {
+    float: right;
+    width: calc(100% - 168px);
+    min-height: 40px;
+}
+.content .contentBox .spanLine .spanLineRight p {
+    margin: 5px 0;
+    line-height: 20px;
+}
+.content .contentBox .spanLine .spanLineLeft textarea,
+.content .contentBox .spanLine .spanLineRight textarea {
+    width: calc(100% - 12px);
+    height: 200px;
+    margin-top: 4px;
+    border:1px solid #CCC;
+}
+
+.content .contentBox .spanLine .spanLineRight .contentList{  }
+.content .contentBox .spanLine .spanLineRight .contentList .contentLi{  }
+
+.content .contentBox .spanLine.spanSubmit {
+    padding-top: 50px;
+    border: none;
+}
+.content .contentBox .spanLine.spanSubmit:hover {
+    background: none;
+}
+.content .contentBox .spanLine .button {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 10px 0 0;
+    padding: 5px;
+    width: 120px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #FFF;
+    background: #555;
+}
+.content .contentBox .spanLine .button.filter {
+    width: 100px;
+    height: 30px;
+    margin-left:-6px;
+}
+.content .contentBox .spanLine .button.gray { background: #AAA; border-color: #999; color: #333; }
+.content .contentBox .spanLine select {
+    display: block;
+    float: left;
+    padding: 6px;
+    margin: 5px 5px 0 0;
+    min-width: 150px;
+    height: 32px;
+    font-size: 12px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+.content .contentBox .spanLine select:hover {
+    border: 1px solid #027de5;
+}
+.content .contentBox .spanLine .selectLine { display: block; overflow: hidden; border-bottom: 1px dashed #DDD; padding: 5px 0 10px; }
+.content .contentBox .spanLine .selectLine input.text.width100 { width: 100px; }
+.content .contentBox .spanLine input.text {
+    width: calc(100% - 20px);
+    padding: 5px;
+    height: 20px;
+    font-size: 12px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    transition: border 0.5s;
+}
+.content .contentBox .spanLine input.text:hover {
+    border: 1px solid #027de5;
+}
+.content .contentBox .spanLine input.text.floatright {
+    margin-top: 4px;
+}
+.content .contentBox .spanLine input.submit {
+    cursor: pointer;
+    float: left;
+    padding: 7px;
+    width: 150px;
+    height: 40px;
+    font-size: 12px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    color: #FFF;
+    background: #027de5;
+    margin-right: 10px;
+}
+.content .contentBox .spanLine span.submit {
+    display: block;
+    float: left;
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+    width: 130px;
+    height: 40px;
+    font-size: 12px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    color: #FFF;
+    background: #027de5;
+    margin-right: 10px;
+}
+.content .contentBox .spanLine span.submit.gray{
+    border: 1px solid #AAA;
+    color: #555;
+    background: #CCC;
+}
+
+.content .contentBox .spanLine .picidUploadList { overflow: hidden; }
+.content .contentBox .spanLine .picidUploadList .picidUploadLi { float:left; height: 54px; margin: 0 5px 15px 0; padding: 10px; overflow: hidden; border: 2px solid #FFF; background: #CCC; border-radius: 5px; cursor: move; }
+.content .contentBox .spanLine .picidUploadList .picidUploadLi .pic { display: block; width: 50px; height: 50px; border: 2px solid #FFF; overflow: hidden; float: left; margin-right: 10px; }
+.content .contentBox .spanLine .picidUploadList .picidUploadLi .pic img{ width: 50px; height: 50px; float: left; }
+.content .contentBox .spanLine .picidUploadList .picidUploadLi .other{ width: 100px; height: 50px; float: left; }
+.content .contentBox .spanLine .picidUploadList .picidUploadLi .other .pic_copy { margin-top: -7px; }
+.content .contentBox .spanLine .picidUploadList .picidUploadLi .other .pic_copy input { width: 90px; height: 15px; line-height: 15px; padding: 2px; transition: none; animation: none; }
+.content .contentBox .spanLine .picidUploadList .picidUploadLi .other .pic_delete { width: 50px; margin-top: -12px; color: #027de5; cursor: pointer; }
+
+.content .contentBox .spanLine .fileidUploadList { overflow: hidden; }
+.content .contentBox .spanLine .fileidUploadList .fileidUploadLi { float:left; height: 54px; margin: 0 5px 15px 0; padding: 10px; overflow: hidden; border: 2px solid #FFF; background: #CCC; border-radius: 5px; cursor: move; }
+.content .contentBox .spanLine .fileidUploadList .fileidUploadLi .file { display: block; width: 50px; height: 50px; border: 2px solid #FFF; overflow: hidden; float: left; margin-right: 10px; }
+.content .contentBox .spanLine .fileidUploadList .fileidUploadLi .file img{ width: 50px; height: 50px; float: left; }
+.content .contentBox .spanLine .fileidUploadList .fileidUploadLi .other{ width: 100px; height: 50px; float: left; }
+.content .contentBox .spanLine .fileidUploadList .fileidUploadLi .other .file_copy { margin-top: -7px; }
+.content .contentBox .spanLine .fileidUploadList .fileidUploadLi .other .file_copy input { width: 90px; height: 15px; line-height: 15px; padding: 2px; transition: none; animation: none; }
+.content .contentBox .spanLine .fileidUploadList .fileidUploadLi .other .file_delete { width: 50px; margin-top: -12px; color: #027de5; cursor: pointer; }
+
+.pageLink { margin: 20px 10px; }
+.pageLink a, .pageLink strong { display: block; float: left; width: 20px; height: 20px; margin-right: 10px; background: #EEE; text-align: center; padding: 5px; line-height: 20px; color: #555; -webkit-transition: all 0.5s; }
+.pageLink a:hover,
+.pageLink strong:hover,
+.pageLink strong { background: #555; color: #FFF; }
+
+.footer {
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    letter-spacing: 2px;
+    text-align: center;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.9);
+    color: #AAA;
+}
+.footer a {
+    color: #FFF;
+}
+.footer .center{
+    margin: 0 auto;
+}
+.footer select {font-size: 12px; border-radius: 5px; }
+.footer .language { display: block; position: absolute; right: 0; margin-right: 30px; }
+
+.stock_area .delete { color: blue; cursor: pointer; margin-right: 10px; }
+.stock_area .copy { color: blue; cursor: pointer; margin-right: 10px; }
+.stock_area .move { cursor: move; color: blue; margin-right: 10px; }
+
+[fanswoo-pic_upload_ajax] [fanswoo-pic_upload_ajax_btn] { position: relative; overflow: hidden; margin: 5px 5px 15px 0px; display:inline-block; *display:inline; padding:5px 15px 5px; font-size:12px; line-height:18px; *line-height:20px; height:20px; color:#fff; text-align:center;vertical-align:middle; background:#555; border:1px solid #ccc;border-color:#eee #eee #eee; border-bottom-color:#333;-webkit-border-radius:4px; -moz-border-radius:4px;border-radius:4px; cursor:pointer; } 
+[fanswoo-pic_upload_ajax] [fanswoo-pic_upload_ajax_btn] > span { display: block; height: 20px; line-height: 20px; cursor: pointer; }
+[fanswoo-pic_upload_ajax] [fanswoo-pic_upload_ajax_btn] input{ position: absolute;top: 0; right: 0;margin: 0;border:solid transparent; opacity: 0;filter:alpha(opacity=0); cursor: pointer;animation: none; transition: none; line-height:30px; height:30px; } 
+[fanswoo-pic_upload_ajax] [fanswoo-pic_upload_ajax_message] { color: #777; height: 20px; line-height: 20px; }
+
+[fanswoo-file_upload_ajax] [fanswoo-file_upload_ajax_btn] { position: relative; overflow: hidden; margin: 5px 5px 15px 0px; display:inline-block; *display:inline; padding:5px 15px 5px; font-size:12px; line-height:18px; *line-height:20px; height:20px; color:#fff; text-align:center;vertical-align:middle; background:#555; border:1px solid #ccc;border-color:#eee #eee #eee; border-bottom-color:#333;-webkit-border-radius:4px; -moz-border-radius:4px;border-radius:4px; cursor:pointer; } 
+[fanswoo-file_upload_ajax] [fanswoo-file_upload_ajax_btn] > span { display: block; height: 20px; line-height: 20px; cursor: pointer; }
+[fanswoo-file_upload_ajax] [fanswoo-file_upload_ajax_btn] input{ position: absolute;top: 0; right: 0;margin: 0;border:solid transparent; opacity: 0;filter:alpha(opacity=0); cursor: pointer;animation: none; transition: none; line-height:30px; height:30px; } 
+[fanswoo-file_upload_ajax] [fanswoo-file_upload_ajax_message] { color: #777; height: 20px; line-height: 20px; }
+
+.content .spanLineTable{
+    width: auto;
+    height: auto;
+    line-height: 40px;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.spanLineTable .pic_block{
+    float: left;
+    position: relative;
+    height:170px;
+}
+.spanLineTable .pic_block .pic_check{
+    display:none;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width:18px;
+    height:18px;
+    cursor:pointer;
+    opacity:0;
+    z-index:500;
+}
+.spanLineTable .pic_block:hover .pic_check{
+    opacity:1;
+}
+.spanLineTable .pic_block .piclist{
+    width:150px;
+    margin:4px;
+    border: 3px solid #FFF;
+}
+.spanLineTable .pic_block .albumlist{
+    width:150px;
+    margin:5px;
+    border: 1px solid #000;
+}
+.spanLineTable .pic_block .hover_box{
+    opacity:0;
+    top:7px;
+    left:7px;
+    width:150px;
+    height:150px;
+    position: absolute;
+    overflow: hidden;
+    background-color:#fff;
+    transition:0.3s;-webkit-transition:0.3s;
+}
+.spanLineTable .pic_block .hover_box:before{
+    content: "";height: 100%;display: inline-block;vertical-align: middle;
+}
+.spanLineTable .pic_block .hover_box .p{
+    width:100%;
+    margin: 0 auto;
+    text-align: center;;display: inline-block;vertical-align: middle;
+}
+.spanLineTable .pic_block:hover .hover_box{
+    opacity:0.7;
+}
+.spanLineTable .pic_block .piclist.border{
+    border: 3px solid #FFBB66;
+}
+.batch_deletion { padding-top:15px; }
+.batch_deletion .button {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 10px 0 10px;
+    padding: 5px;
+    width: 130px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #FFF;
+    background: #555;
+}
+.batch_deletion .delete_prompt { color:#333; }
+
+@media screen and (min-width: 1600px){
+    .content { min-height: 1200px; }
+}
+@media screen and (max-width:1024px) and (min-width: 960px){
+    .content { min-height: 960px; }
+}
+@media screen and (max-width: 959px) {
+    .sidebar { display: none; }
+    .header { display: none; }
+    .header_bar_mobile { display: block; width: calc(100% - 40px); height: 50px; line-height: 50px; padding: 0 20px 0 30px; position: fixed; top: 0; background: #333; z-index: 999; }
+    .header_bar_mobile .logo { float: left; display: block; width: 120px; height: 50px; background: url(../../img/fanswoo-logo.svg) no-repeat center center; }
+    .header_bar_mobile .menu { float: right; padding: 10px; width: 30px; height: 30px; transition: all 0.3s; cursor: pointer; opacity: 0.9; }
+    .header_bar_mobile.clicked .menu { transform: rotate(90deg); -webkit-transform: rotate(90deg); }
+    .header_bar_mobile .menu img { float: right; width: 100%; height: 100%; }
+
+    .header_bar_mobile_content { display: block; width: 200px; height: 100%; right: 0; margin-right: -200px; padding-top: 55px; position: fixed; top: 0; background: rgba(51,51,51,0.95); transform: translateX(0); z-index: 998;}
+    .header_bar_mobile_content a { display: block; }
+    .header_bar_mobile_content .li { display: block; width: 100%; padding: 0 25px; height: auto; line-height: 45px; color: #fff; letter-spacing: 2px; transition: 0.3s; -webkit-transition: 0.3s; border-bottom: 1px dashed rgba(255,255,255,0.2); font-size: 15px; }
+
+    .header_bar_mobile_content .header_father_area { display: block; width: 100%; padding: 0 px; height: auto; line-height: 45px; color: #fff; letter-spacing: 2px; transition: 0.3s; -webkit-transition: 0.3s; border-bottom: 1px dashed rgba(255,255,255,0.1); }
+    .header_bar_mobile_content .header_father_area p { padding-left: 25px; line-height: 45px; font-size: 15px; cursor: pointer; }
+    .header_bar_mobile_content .header_father_area .child_area { width:100%; display: none; padding-bottom: 0px; background: rgba(51,51,51,1); }
+    .header_bar_mobile_content .header_father_area .child_area a { height:auto; padding: 13px 0px 13px 25px; color: rgba(255,255,255,0.7); line-height: 5px; font-size: 15px; }
+    .header_bar_mobile_content .header_father_area .child_area a:hover { color: rgba(255,255,255,1); }
+    .header_bar_mobile_content .header_father_area .child_area .active { display: block; }
+
+    .wrap_shadow { display: none; position: fixed; width: 100%; height: 100%; background: rgba(255,255, 255, 0.85); z-index: 997; opacity: 0; cursor: pointer; }
+
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.width100,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.width100,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.width200,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.width200,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.width300,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.width300,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.width400,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.width400,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.width500,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.width500,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.width600,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.width600 { width: 100%; }
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.text { padding: 0 6px; width: 145px; }
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.text.width100,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.text.width100,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.text.width200,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.text.width200,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.text.width300,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.text.width300,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.text.width400,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.text.width400,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.text.width500,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.text.width500,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.text.width600,
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineRight.text.width600 { width: 100%; }
+
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft.text { width: 100%; }
+    .content .contentBox:not(.contentTablelist) .spanLine:not(.order) .spanLineLeft { min-height: 5px; width: auto; }
+    .content .contentBox:not(.contentTablelist) .spanLine .spanLineRight { float:left; width: 100%; min-height: 20px;}
+    .content .contentBox:not(.contentTablelist) .spanLine .spanLineRight .gray { margin-left: 6px; font-size: 12px; }
+    .content .contentBox:not(.contentTablelist) .spanLine .spanLineRight [fanswoo-pic_upload_ajax] { margin-left: 5px; }
+    .content .contentBox:not(.contentTablelist) .spanLine.spanSubmit { padding-top: 10px; margin: 0 auto; text-align: center; }
+    .content .contentBox:not(.contentTablelist) .spanLine input.text { width: calc(100% - 20px); }
+    .content .contentBox:not(.contentTablelist) .spanLine input.submit { -webkit-appearance: none; float: none; margin: 0 auto; margin-top: 10px; width: 80%; }
+    .content .contentBox:not(.contentTablelist) .spanLine span.submit.gray { float: none; margin: 0 auto; margin-top:10px; width: 80%; padding: 0px; }
+    .content .contentBox .spanLine .button { -webkit-appearance: none; }
+    .content .contentBox:not(.contentTablelist) .spanLine.noneBg { border-bottom: 1px solid #EEE; }
+    .content .contentBox:not(.contentTablelist) .spanLine .spanLineRight p { margin-left: 6px; }
+    .content .contentBox:not(.contentTablelist) .spanLine .spanLineLeft.aligncenter { text-align: left; }
+    .content .contentBox:not(.contentTablelist) .spanLine .spanLineLeft textarea,
+    .content .contentBox:not(.contentTablelist) .spanLine .spanLineRight textarea { float: none; width: calc(100% - 20px); }
+    .content .contentBox .spanLine:hover { background: #FFF; }
+
+    .footer { height: auto; line-height: 25px; }
+    .footer select { font-size: 12px; border-radius: 5px; }
+    .footer .language { float: right; width: 35%; margin-right: 0px; margin-top: 5px; }
+    .footer .center { float: left; width: 60%; line-height: 20px; margin: 10px auto 10px auto; padding-left: 5px; }
+
+    .content { width: calc(100% - 80px); padding-bottom: 5px;}
+
+    .spanLineLeft img { max-width: 100%; }
+    .pageLink { width: 100%; }
+    .batch_deletion .delete_prompt { display: block; margin: 10px 0 0 10px; }
+}

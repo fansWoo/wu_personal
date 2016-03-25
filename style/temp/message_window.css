@@ -1,0 +1,9 @@
+[fanswoo-message_show] { position: fixed; cursor: pointer; left: 50%; top: 0; margin: 70px 0 0 -75px; min-width: 100px; max-width: 450px; font-size: 12px; text-align: center; padding: 5px 25px; line-height: 20px; color: #222; border-radius: 2px; border: 1px solid #f0c36d; background: #f9edbe; box-shadow: 0 2px 4px rgba(0,0,0,0.2); overflow: hidden; z-index: 99999999; animation: p201508150507 0.7s; }
+@keyframes p201508150507
+{
+	0% { transform: translateY(-30%); opacity: 0; }
+	20% { transform: translateY(-30%); opacity: 0; }
+	100% { transform: translateY(0%); opacity: 1; }
+}
+[fanswoo-message_show] .delete { display: block; position: absolute; right: 0; margin: 3px 5px 0 0; width: 15px; height: 15px; }
+[fanswoo-message_show] .delete img { float: left; width: 100%; height: 100%; }

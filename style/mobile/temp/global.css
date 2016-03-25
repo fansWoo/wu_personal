@@ -1,0 +1,5 @@
+a { color:#0063b1; }
+
+body { overflow:hidden; }
+.wrap { overflow:hidden; }
+[fanswoo-m-page] { overflow-y: scroll; width: calc(100% - 40px); margin: 50px 0 0; padding: 20px; position: absolute; }
